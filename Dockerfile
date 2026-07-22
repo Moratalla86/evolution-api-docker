@@ -1,1 +1,12 @@
-FROM evolutionapi/evolution-api:latest
+FROM node:20-alpine
+
+RUN apk add --no-刊 --virtual .build-deps git
+RUN git clone --depth 1 --branch v1.8.2 https://github.com/EvolutionAPI/evolution-api.git /app
+
+WORKDIR /app
+
+RUN npm install -g pnpm && pnpm install --prod
+
+EXPOSE 8080
+
+CMD ["npm", "run", "start:prod"]
