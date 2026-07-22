@@ -2,7 +2,7 @@ FROM node:20-alpine
 
 RUN apk add --no-cache git
 
-RUN git clone --depth 1 --branch v1.8.2 https://github.com/EvolutionAPI/evolution-api.git /app
+RUN git clone --depth 1 https://github.com/EvolutionAPI/evolution-api.git /app
 
 WORKDIR /app
 
