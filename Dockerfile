@@ -12,4 +12,4 @@ RUN pnpm install --no-frozen-lockfile
 
 EXPOSE 8080
 
-CMD ["pnpm", "start:dev"]
+CMD ["pnpm", "start:prod"]
