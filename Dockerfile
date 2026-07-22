@@ -6,7 +6,10 @@ RUN git clone --depth 1 https://github.com/EvolutionAPI/evolution-api.git /app
 
 WORKDIR /app
 
-RUN npm install -g pnpm && pnpm install --prod
+RUN npm install -g pnpm
+RUN pnpm config set ignore-scripts true
+RUN pnpm install --no-frozen-lockfile
+RUN pnpm build
 
 EXPOSE 8080
 
