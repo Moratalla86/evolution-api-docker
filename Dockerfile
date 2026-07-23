@@ -11,4 +11,4 @@ ENV DATABASE_PROVIDER=postgresql
 RUN npx prisma generate --schema ./prisma/postgresql-schema.prisma
 
 EXPOSE 8080
-CMD ["npx", "tsx", "src/main.ts"]
+CMD ["sh", "-c", "npx prisma db push --schema=./prisma/postgresql-schema.prisma && npx tsx src/main.ts"]
